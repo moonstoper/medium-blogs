@@ -1,32 +1,31 @@
 /* HTML CSSResult Skip Results Iframe */
 body {
-  background: rgb(43,78,104);
-  color: rgb(220,220,220);
-  font-family: 'Fira Code', monospace;
+  background: rgb(43, 78, 104);
+  color: rgb(220, 220, 220);
+  font-family: "Fira Code", monospace;
 }
-  
+
 .typewriter {
-  position: absolute;
-  top: 35%;
-  left: 10%;
+  margin-top: 40%;
+  margin-left: 1rem;
 }
 
 .typewriter h1 {
   border-right: 1px solid white;
-  white-space: nowrap;
+  /* white-space: nowrap;
   overflow: hidden;
-  width: 390px;
-  white-space: nowrap;
+  width: 390px; */
+  white-space: pre-wrap;
   overflow: hidden;
   animation: typewriter 2s steps(25) 1s 1 normal both;
 }
 
 .typewriter #line-1 {
   border-right: 1px solid white;
-  white-space: nowrap;
+  /* white-space: nowrap;
   overflow: hidden;
-  width: 425px;
-  white-space: nowrap;
+  width: 390px; */
+  white-space: pre-wrap;
   overflow: hidden;
   animation: typewriter 3s steps(40) 1s 1 normal both;
   animation-delay: 3.5s;
@@ -34,10 +33,10 @@ body {
 
 #line-2 {
   border-right: 1px solid white;
-  white-space: nowrap;
+  /* white-space: nowrap;
   overflow: hidden;
-  width: 405px;
-  white-space: nowrap;
+  width: 390px; */
+  white-space: pre-wrap;
   overflow: hidden;
   animation: typewriter 3s steps(40) 1s 1 normal both;
   animation-delay: 7s;
@@ -49,10 +48,10 @@ body {
     border-right: none;
   }
   0.1% {
-    border-right: 1px solid rgb(220,220,220);
+    border-right: 1px solid rgb(220, 220, 220);
   }
   99.9% {
-    border-right: 1px solid rgb(220,220,220);
+    border-right: 1px solid rgb(220, 220, 220);
   }
   100% {
     border: none;
@@ -60,22 +59,23 @@ body {
 }
 
 i {
-opacity: 0;
-animation: fadeIn 2s ease-in-out;
-animation-delay: 10s;
-animation-fill-mode: forwards;
-padding-top: 1rem;
-padding-left: 20px;
-
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out;
+  animation-delay: 10s;
+  animation-fill-mode: forwards;
+  padding-top: 1rem;
+  padding-left: 20px;
 }
 
 a {
-  color: rgb(220,220,220);
+  color: rgb(220, 220, 220);
 }
 
 @keyframes fadeIn {
-from {opacity:0;}
-to {opacity:1;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
-

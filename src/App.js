@@ -14,13 +14,13 @@ function App() {
         <p id="line-2">Send me a message to discuss your project.</p>
         <a
           href="mailto:sjkachhap@outlook.com"
-          style={{ textDecoration: "none",fontSize:"2.5rem" }}
+          style={{ textDecoration: "none", fontSize: "2.5rem" }}
         >
           📧
         </a>
       </div>
       <a
-        style={{ float: "right",position: "absolute",bottom: 0,textDecoration: "none" }}
+        style={{ textDecoration: "none", marginLeft: "1rem" }}
         href="https://codepen.io/dianalis"
       >
         animation by Diana

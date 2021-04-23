@@ -1,69 +1,81 @@
-:root {
-  --bg: #1a1e2d;
-  --green: #a5ea9b;
-  --pink: #ff61d8;
-  --blue: #569cfa;
-  --orange: #ffcc81;
-  --cyan: #7ed1e2;
-}
-
+/* HTML CSSResult Skip Results Iframe */
 body {
-  height: 100vh;
-  width: 100vw;
-  background: var(--bg);
-  display: flex;
-  place-content: center;
-  align-items: flex-end;
+  background: rgb(43,78,104);
+  color: rgb(220,220,220);
+  font-family: 'Fira Code', monospace;
+}
+  
+.typewriter {
+  position: absolute;
+  top: 35%;
+  left: 10%;
+}
+
+.typewriter h1 {
+  border-right: 1px solid white;
+  white-space: nowrap;
   overflow: hidden;
+  width: 390px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typewriter 2s steps(25) 1s 1 normal both;
 }
 
-.container {
-  width: 80vw;
-  height: 80vh;
-}
-.container svg {
-  height: 100%;
-  width: 100%;
-  overflow: visible;
+.typewriter #line-1 {
+  border-right: 1px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 425px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typewriter 3s steps(40) 1s 1 normal both;
+  animation-delay: 3.5s;
 }
 
-#bongo-cat {
-  fill: var(--bg);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 4;
+#line-2 {
+  border-right: 1px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 405px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typewriter 3s steps(40) 1s 1 normal both;
+  animation-delay: 7s;
 }
-#bongo-cat .laptop-cover,
-#bongo-cat .headphone .band {
-  fill: none;
+
+@keyframes typewriter {
+  0% {
+    width: 0;
+    border-right: none;
+  }
+  0.1% {
+    border-right: 1px solid rgb(220,220,220);
+  }
+  99.9% {
+    border-right: 1px solid rgb(220,220,220);
+  }
+  100% {
+    border: none;
+  }
 }
-#bongo-cat .paw,
-#bongo-cat .head {
-  stroke: var(--orange);
+
+i {
+opacity: 0;
+animation: fadeIn 2s ease-in-out;
+animation-delay: 10s;
+animation-fill-mode: forwards;
+padding-top: 1rem;
+padding-left: 20px;
+
 }
-#bongo-cat .laptop-keyboard {
-  stroke-width: 2;
+
+a {
+  color: rgb(220,220,220);
 }
-#bongo-cat .terminal-code {
-  stroke-width: 5;
+
+@keyframes fadeIn {
+from {opacity:0;}
+to {opacity:1;}
 }
-#bongo-cat .music .note,
-#bongo-cat .laptop-base,
-#bongo-cat .laptop-cover,
-#bongo-cat .paw .pads {
-  stroke: var(--pink);
-}
-#bongo-cat .table line,
-#bongo-cat .headphone .band,
-#bongo-cat .headphone .speaker path:nth-child(3) {
-  stroke: var(--green);
-}
-#bongo-cat .terminal-frame,
-#bongo-cat .laptop-keyboard,
-#bongo-cat .headphone .speaker path:nth-child(2) {
-  stroke: var(--blue);
-}
-#bongo-cat .terminal-code,
-#bongo-cat .headphone .speaker path:first-child {
-  stroke: var(--cyan);
-}
+
+

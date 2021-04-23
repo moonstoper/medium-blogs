@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.vercel.medium_blogs.twa",
+      "sha256_cert_fingerprints": [
+        "7F:8E:F7:1C:FB:6F:7F:1E:2A:11:30:86:39:9A:7E:6D:AB:2E:D2:6E:1A:44:84:55:80:0E:15:B0:8A:E2:76:DB"
+      ]
+    }
+  }
+]

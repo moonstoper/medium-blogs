@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import { Link } from "gatsby";
 // import SEO from "../components/seo";
 // import Layout from "../components/layout";
@@ -12,30 +12,47 @@ const Model = () => {
   const gltf = useGLTF("/final-grv-astronaut.blend.gltf", true);
   return <primitive object={gltf.scene} dispose={null} />;
 };
+const Fall = () => {
+    
+      return <>
+        <Html>Loading</Html>
+      </>;
+}
 
 const HTMLcontent = () => {
-  const ref = useRef();
 
+    const ref = useRef();
+    //  var res = false;
+    useFrame(() => {
+      if(ref.current!=undefined)
+        ref.current.rotation.y += 0.01;
+        // console.log(ref.current)
+  });
+   
   const renderer = (
     <>
       <ambientLight intensity={0.5} />
       <color attach="background" args={["pink"]} />
       <directionalLight position={[10, 10, 5]} intensity={1} />
-      <Suspense fallback={<><Html>Loading</Html></>}>
+      <Suspense
+              fallback={ Fall()
+        }
+          >
+        {/* {!res? res=true:null} */}
         <mesh ref={ref}>
           <Model />
         </mesh>
       </Suspense>
     </>
   );
-  useFrame(() => {
-    ref.current.rotation.y += 0.01;
-  });
+
   return renderer;
 };
-const App = () => (
+function App() {
+    // const [res,setres] = useState(false)
   //   <Layout>
   //     <SEO title="Home" lang="en-us" />
+    return(
   <center>
     <Canvas
       style={{ height: "80vh" }}
@@ -45,9 +62,10 @@ const App = () => (
       <HTMLcontent />
     </Canvas>
     <div>THREE JS</div>
-  </center>
+        </center>
+    )
   //     {/* <Link to="/page-2">TO PAGE 2</Link> */}
   // //   </Layout>
-);
+}
 
 export default App;

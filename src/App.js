@@ -1,32 +1,53 @@
 import React from "react";
-// import logo from "./logo.svg";
+// import { Link } from "gatsby";
+// import SEO from "../components/seo";
+// import Layout from "../components/layout";
 import "./App.css";
-// const win = () => {
-//   return <>HI</>;
-// };
-function App() {
-  return (
-    <>
-      <div className="typewriter">
-        <h1>Hi there, I'm Suraj.</h1>
+import { Canvas, useFrame } from "@react-three/fiber";
+// import { Html, RoundedBox } from "@react-three/drei"
+import { Html, useGLTF } from "@react-three/drei";
+import { Suspense, useRef } from "react";
+import { render } from "@testing-library/react";
+const Model = () => {
+  const gltf = useGLTF("/final-grv-astronaut.blend.gltf", true);
+  return <primitive object={gltf.scene} dispose={null} />;
+};
 
-        <p id="line-1">An independent web developer, in India.</p>
-        <p id="line-2">Send me a message to discuss your project.</p>
-        <a
-          href="mailto:sjkachhap@outlook.com"
-          style={{ textDecoration: "none", fontSize: "2.5rem" }}
-        >
-          📧
-        </a>
-      </div>
-      <a
-        style={{ textDecoration: "none", marginLeft: "1rem" }}
-        href="https://codepen.io/dianalis"
-      >
-        animation by Diana
-      </a>
+const HTMLcontent = () => {
+  const ref = useRef();
+
+  const renderer = (
+    <>
+      <ambientLight intensity={0.5} />
+      <color attach="background" args={["pink"]} />
+      <directionalLight position={[10, 10, 5]} intensity={1} />
+      <Suspense fallback={<><Html>Loading</Html></>}>
+        <mesh ref={ref}>
+          <Model />
+        </mesh>
+      </Suspense>
     </>
   );
-}
+  useFrame(() => {
+    ref.current.rotation.y += 0.01;
+  });
+  return renderer;
+};
+const App = () => (
+  //   <Layout>
+  //     <SEO title="Home" lang="en-us" />
+  <center>
+    <Canvas
+      style={{ height: "80vh" }}
+      colorManagement
+      camera={{ position: [40, 20, 140], fov: 2 }}
+    >
+      <HTMLcontent />
+    </Canvas>
+    <div>THREE JS</div>
+  </center>
+  //     {/* <Link to="/page-2">TO PAGE 2</Link> */}
+  // //   </Layout>
+);
 
 export default App;

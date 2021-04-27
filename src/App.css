@@ -1,12 +1,12 @@
 /* HTML CSSResult Skip Results Iframe */
 body {
-  background: rgb(43, 78, 104);
+  background: pink;
   color: rgb(220, 220, 220);
   font-family: "Fira Code", monospace;
 }
 
 .typewriter {
-  margin-top: 40%;
+  margin-top: 40vh;
   margin-left: 1rem;
 }
 
